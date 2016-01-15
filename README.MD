@@ -39,7 +39,7 @@ Python hakkında geçerli ve mükemmel bir Türkçe kaynak arıyorsanız Fırat 
 
 ### Başlarken
 
-Bu bölüme söz dizim ile başlamak istiyorum. Python söz dizimi PHP'ye göre daha basittir. PHP'de bulunan noktalı virgül, Python için gerekli değildir. Ve Python ile kodlama yaparken dil etiketleri açmanıza gerek yoktur. Python'da dosya uzantıları **.py** şeklinde verilir. Python ile yazılan kodları çalıştırmak için konsol ekranına `python3 dosyaadi.py` komutu verilir.
+Bu bölüme söz dizim ile başlamak istiyorum. Python söz dizimi PHP'ye göre daha basittir. PHP'de bulunan noktalı virgül, Python için gerekli değildir. Ayrıca Python ile kodlama yaparken dil etiketleri açmanıza da gerek yoktur. Python'da dosya uzantıları **.py** şeklinde verilir. Python ile yazılan kodları çalıştırmak için konsol ekranına `python3 dosyaadi.py` komutu verilir.
 
 PHP'de kod yazacaksanız mutlaka PHP etiketini açmalısınız:
 
@@ -49,7 +49,7 @@ PHP'de kod yazacaksanız mutlaka PHP etiketini açmalısınız:
 // kodlar burada
 ```
 
-Python'da kod yazarken böyle bir durum söz konusu değil. Bunu basit bir örnekle görelim.
+Python'da kod yazarken böyle bir durum söz konusu değil. Bunu basit bir örnekle görelim:
 
 ```python
 2+2
@@ -138,9 +138,9 @@ PHP'de sabitler, `const` ve `define()` ile yapılırken, Python'da böyle bir du
 ```php
 <?php
 
-const sabit = "Sabit";
+const SABIT = "Sabit";
 
-define('bir_sabit', 'Sabit İçeriği');
+define('BIR_SABIT', 'Sabit İçeriği');
 ```
 
 Python'da ise durum tamamen farklıdır. Python için herhangi bir sabit tanımlama yoktur. Ancak sabit benzeri yapılar oluşturabiliriz:
@@ -164,7 +164,7 @@ Python dilinin yapısında sabitler olmasa da, sabit gibi davranan değiştirile
 
 ### 1.4 - Diziler
 
-PHP'de dizileri `array()` işlevi ve array işlevi olmadan tanımlayabiliriz. Bir örnek verecek olursak:
+PHP'de dizileri `array()` işlevi ile ya da öğeleri tek tek belirterek tanımlayabiliriz. Bir örnek verecek olursak:
 
 ```php
 <?php
@@ -240,9 +240,18 @@ Python'da var olan bir diziye ekleme işlemini `append()` işlevi ile yaparız.
 meyveler.append("vişne")
 ```
 
+---
+**BURADA TUPLE'DAN BAHSEDİLEBİLİR**
+---
+
+
 ### 1.5 - Veri Türleri
 
 PHP ve Python'da değişkenleri tanımlarken verilerin tiplerini belirtmemize gerek yok. Ancak bazı durumlarda bu veri tiplerini bilmemiz gerekebilir. Python için bazı veri tipleri şunlardır:
+
+---
+PHP'deki veri tipleri de sıralanabilir.
+---
 
 **Numerik Tipler**
 
@@ -261,6 +270,11 @@ PHP ve Python'da değişkenleri tanımlarken verilerin tiplerini belirtmemize ge
 - dict
 - bool (True ya da False durumlarında)
 
+---
+**Dict tipinden bahsedilebilir.**
+---
+
+
 ### 1.6 - Karar Yapıları
 
 PHP'de ve Python'da karar yapıları farklı şekilde tanımlanır. Karar yapıları başlığı altında if-else kontrollerini anlatacağım.
@@ -270,17 +284,17 @@ PHP'de basit bir if tanımı şöyle yapılır:
 ```php
 <?php
 
-if(1 < 2) {
+if (1 < 2) {
     echo "Küçük";
 }
 
 // ya da
 
-if(1 < 2)
+if (1 < 2)
     echo "Tek satır ama bu";
 ```
 
-Burada if tanımı yapıldığında köşeli parantezlerle kapattık. Python için buna gerek yok. Python'da köşeli parantezlerin yerini iki nokta üst üste kullanımı almakta.
+Burada if tanımı yapıldığında kıvırcık/süslü parantezlerle kapattık. Python için buna gerek yok. Python'da kıvırcık/süslü parantezlerin yerini iki nokta üst üste kullanımı almakta.
 
 ```python
 
@@ -311,7 +325,7 @@ aynı kullanımı PHP'de yapmaya kalkarsak hata alırız. Örneğin:
 ```php
 <?php
 
-if(1<2)
+if (1 < 2)
 	echo "ok";
 	echo "Noo";
 	$i = "f";
@@ -321,6 +335,10 @@ else
 
 ?>
 ```
+
+---
+**PHP'nin endif ile biten statement'ından bahsedilebilir.**
+---
 
 Bu PHP kodu hatalı bir PHP kodudur. Ayrıca diğer durumları da göz önüne alırsak:
 
@@ -351,7 +369,7 @@ PHP'de döngüler for, foreach, while, do-while iken, Python'da sadece for ve wh
 
 $i = 0;
 
-while($i < 9) {
+while ($i < 9) {
     echo $i;
     $i++;
 }
@@ -473,8 +491,8 @@ Python'da sınıflar PHP ile hemen hemen aynı şekilde oluşturulurlar. Bu iki 
 
 ```php
 
-class Sinif{
-    public function merhaba(){
+class Sinif {
+    public function merhaba() {
         echo "Merhaba Dünya";
     }
 }
@@ -510,11 +528,9 @@ Bu kodun yukarıdakinden hiçbir farkı yok. Nesnelerde miras alma olayı PHP'de
 
 <?php
 
-class Mesaj
-{
+class Mesaj {
 
-    public function Harika($mesaj)
-    {
+    public function Harika($mesaj) {
         return "$mesaj harika bir meyvedir.";
     }
 }
